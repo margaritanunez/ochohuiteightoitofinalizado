@@ -16,22 +16,19 @@ public class SecondActivity extends AppCompatActivity {
         setContentView(R.layout.activity_second);
 
         initListeners();
-
-
     }
 
-    private void initListeners() {
+        private void initListeners() {
+            Button openLink = findViewById(R.id.openUrlButton);
+            openLink.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent implicitIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://kotlindoc.blogspot.com/2019/10/android-log-con-timber.html"));
+                    startActivity(implicitIntent);
+                }
+            });
 
-        Button openLink = findViewById(R.id.openUrlButton);
-        openLink.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent implicitIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://kotlindoc.blogspot.com/2019/10/android-log-con-timber.html"));
-            }
-        });
-
-        Button goBack = findViewById(R.id.devuelveteButton);
-    }
-
+            Button goBack = findViewById(R.id.devuelveteButton);
+        }
 
 }
