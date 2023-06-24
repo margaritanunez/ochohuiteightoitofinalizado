@@ -29,6 +29,13 @@ public class SecondActivity extends AppCompatActivity {
             });
 
             Button goBack = findViewById(R.id.devuelveteButton);
+            goBack.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent volver = new Intent( SecondActivity.this, MainActivity.class);
+                    startActivity(volver);
+                }
+            });
         }
 
 }
